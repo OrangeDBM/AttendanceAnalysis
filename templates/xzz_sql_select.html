@@ -1,0 +1,54 @@
+<body>
+    <div>
+
+        <!-- <form action="http://127.0.0.1:5002/xzz/kaoqin" method="POST">-->
+        <form action="http://10.0.60.86:5004/xzz/kaoqin" method="POST">
+            <!--  id:<input type="text" name="id" autocomplete="off"><br/><br/> -->
+            开始日期:<input type="text" name="开始日期" autocomplete="off"><br/><br/> 
+            结束日期:<input type="text" name="结束日期" autocomplete="off"><br/><br/> 
+            <h5>注意日期输入格式:2022-07-26</h5>
+            导出员工号:<input type="text" name="导出员工号" autocomplete="off"><br/><br/>
+            <button onclick="myFunction()">查询考勤数据    </button>
+            <input type="submit" value="导出所有考勤数据" formaction="http://10.0.60.86:5004/xzz/kaoqin_daochu">
+            <input type="submit" value="导出工号考勤数据" formaction="http://10.0.60.86:5004/xzz/kaoqin_daochu_gonghao">
+              <p id="demo"></p>
+        </form> 
+        
+        <h4>员工数据</h4>
+        <table border="1" width="30%" weight="30%">
+            <thead>
+            <tr>
+                <th style="white-space:nowrap;">id</th>
+                <th style="white-space:nowrap;">单位名称</th>
+                <th style="white-space:nowrap;">部门</th>
+                <th style="white-space:nowrap;">岗位名称</th>
+                <th style="white-space:nowrap;">姓名</th>
+                <th style="white-space:nowrap;">工号</th>
+                <th style="white-space:nowrap;">上班时间</th>
+                <th style="white-space:nowrap;">下班时间</th>
+                <th style="white-space:nowrap;">create_time</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td style="white-space:nowrap;">{{ result[0]}}</td>
+                        <td style="white-space:nowrap;">{{ result[1]}}</td>
+                        <td style="white-space:nowrap;">{{ result[2]}}</td>
+                        <td style="white-space:nowrap;">{{ result[3]}}</td>
+                        <td style="white-space:nowrap;">{{ result[4]}}</td>
+                        <td style="white-space:nowrap;">{{ result[5]}}</td>
+                        <td style="white-space:nowrap;">{{ result[6]}}</td>
+                        <td style="white-space:nowrap;">{{ result[7]}}</td>
+                        <td style="white-space:nowrap;">{{ result[8]}}</td>
+                        <td><a href="/xzz/delete?id={{ result[0] }}"><button>删除</button></a></td>
+                        <td><a href="/xzz/submit_insert"><button>插入</button></a></td> 
+                     <!--   
+                        <td><a href="/submit_update"><button>修改</button></a></td> 
+                    -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    

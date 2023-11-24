@@ -1,0 +1,58 @@
+<body>
+    <div>
+        <form action="http://10.0.60.86:5004/lijuan/kaoqin_daochu" method="POST">
+            <!--  id:<input type="text" name="id" autocomplete="off"><br/><br/> -->
+            开始日期:<input type="text" name="开始日期" autocomplete="off"><br/><br/> 
+            结束日期:<input type="text" name="结束日期" autocomplete="off"><br/><br/> 
+            <h5>注意日期输入格式:2022-07-26</h5>
+            <button onclick="myFunction()">导出考勤数据</button> 
+              <p id="demo"></p>
+        </form> 
+
+        <td><h5></h3><a href="/lijuan"><button>返回员工数据</button></a></h3></td>
+            
+        <h4>考勤数据</h4>
+        
+        <table border="1" width="30%" weight="30%">
+            <thead>
+            <tr>
+                
+                <th style="white-space:nowrap;">单位名称</th>
+                <th style="white-space:nowrap;">部门</th>
+                <th style="white-space:nowrap;">岗位名称</th>
+                <th style="white-space:nowrap;">结果</th>
+                <th style="white-space:nowrap;">姓名</th>
+                <th style="white-space:nowrap;">考勤卡号</th>
+                <th style="white-space:nowrap;">日期</th>
+                <th style="white-space:nowrap;">超时外出次数</th>
+                <th style="white-space:nowrap;">超时外出时间</th>
+                <th style="white-space:nowrap;">刷卡时间</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td style="white-space:nowrap;">{{ result[0]}}</td>
+                        <td style="white-space:nowrap;">{{ result[1]}}</td>
+                        <td style="white-space:nowrap;">{{ result[2]}}</td>
+                        <td style="white-space:nowrap;">{{ result[3]}}</td>
+                        <td style="white-space:nowrap;">{{ result[4]}}</td>
+                        <td style="white-space:nowrap;">{{ result[5]}}</td>
+                        <td style="white-space:nowrap;">{{ result[6]}}</td>
+                        <td style="white-space:nowrap;">{{ result[7]}}</td>
+                        <td style="white-space:nowrap;">{{ result[8]}}</td>
+                        <td style="white-space:nowrap;">{{ result[9]}}</td>
+
+                    <!--   
+                        <td><a href="/lijuan/delete?id={{ result[0] }}"><button>删除</button></a></td>
+                        <td><a href="/lijuan/submit_insert"><button>插入</button></a></td>
+                        <td><a href="/lijuan"><button>员工数据</button></a></td> 
+                     
+                        <td><a href="/submit_update"><button>修改</button></a></td> 
+                    -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    

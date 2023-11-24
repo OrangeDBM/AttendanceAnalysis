@@ -1,0 +1,25 @@
+<div>
+    <h4>在该页面可以插入数据</h4>
+    <!--通过改变form标签中method属性来改变数据请求的方式-->
+    <!-- <form action="http://127.0.0.1:5002/xzz/insert" method="POST"> -->
+    <form action="http://10.0.60.86:5004/xzz/insert" method="POST">
+      <!--  id:<input type="text" name="id" autocomplete="off"><br/><br/> -->
+        单位名称:<input type="text" name="单位名称" autocomplete="off" ><br/><br/>
+        部门:<input type="text" name="部门" autocomplete="off" ><br/><br/>
+        岗位名称:<input type="text" name="岗位名称" autocomplete="off" ><br/><br/>
+        姓名:<input type="text" name="姓名" autocomplete="off" ><br/><br/>
+        工号:<input type="number" name="工号" autocomplete="off" min="100000" max="999999" required="required"><br/><br/>
+        上班时间(格式08:00):<input type="text" name="上班时间" autocomplete="off" required="required"><br/><br/>
+        下班时间(格式17:30):<input type="text" name="下班时间" autocomplete="off" required="required"><br/><br/>
+        <button onclick="myFunction()">提交</button>       <a href="/xzz"><button>查看数据</button></a>
+        <p id="demo"></p>
+    </form> 
+    <script>
+        function myFunction(){
+            var txt;
+            confirm("Successfully inserted data!");
+            txt = "你已成功插入数据！点击查看数据可查看更新后的数据";
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+</div>
