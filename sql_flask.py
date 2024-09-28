@@ -37,10 +37,10 @@ def login():
         return  render_template('login.html')
     user=request.form.get('user')
     pwd=request.form.get('pwd')
-    if user=='admin' and pwd=='123':#这里可以根据数据库里的用户和密码来判断
+    if user=='admin' and pwd=='123':#这里可以查找数据库里的用户和密码来判断
         session['user_info']=user
         return redirect('/xzz')
-    elif user=='lijuan' and pwd=='123':#这里可以根据数据库里的用户和密码来判断
+    elif user=='lijuan' and pwd=='123':#这里可以查找数据库里的用户和密码来判断
         session['lijuan']=user
         return redirect('/lijuan')
     else:
