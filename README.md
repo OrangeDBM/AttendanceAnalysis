@@ -1,4 +1,25 @@
-# AttendanceAnalysis
+# Attendance Analysis
+
+## Features:
+
+### 1. Login Function
+
+By creating a user password table, the system matches the username and password entered on the front-end page with the username and password fields in the database's user table during login.  Successful login routes to the analysis page, while failed login routes back to the login page.
+
+### 2. Flask API Functionality
+
+Provides a convenient API KEY and parameter passing mechanism for real-time URL calls to perform data analysis using MySQL stored procedures in the backend and return results (in JSON format).
+
+### 3. Flask Parameter Passing and MySQL Stored Procedure Analysis
+
+Connects to the backend MySQL database, fully utilizing SQL capabilities to build powerful data analysis functions.  It leverages Flask's front-end interaction and the backend database's SQL analysis capabilities, separating computation and presentation and fully utilizing the database's inherent computing power to build a simple yet powerful data analysis platform.
+
+### 4. Real-time Analysis and Download
+
+By entering the required parameters, the parameters are passed to the MySQL stored procedure. The stored procedure then calculates the results, assembles the data into an Excel file, and allows the user to download it to their local machine via the webpage.
+
+
+
 
 ## 功能如下
 
